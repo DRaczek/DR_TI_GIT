@@ -9,9 +9,12 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+            <Label Text="Gra Puzzle" HorizontalOptions="Center" TextColor="Black" FontSize="36" FontAttributes="Bold" Margin="50"/>
+
             <Grid x:Name="grid"
                   HorizontalOptions="FillAndExpand"
                   VerticalOptions="Center"/>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

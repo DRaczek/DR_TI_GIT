@@ -8,10 +8,14 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             BorderColor="Black"
-            BorderWidth="1">
+            BorderWidth="3"
+            BackgroundColor="Gray">
         </ImageButton>
         <Label BackgroundColor="Transparent"
                x:Name="labelControl"
                HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"/>
+               VerticalTextAlignment="Center"
+               TextColor="White"
+               FontAttributes="Bold"
+               FontSize="24"/>
 </Grid>
