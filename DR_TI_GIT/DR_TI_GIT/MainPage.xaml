@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DR_TI_GIT.MainPage">
+             x:Class="DR_TI_GIT.MainPage"
+               Shell.BackgroundColor="DarkSlateBlue">
  <ContentPage.Content>
-        <StackLayout>
-            <Label HorizontalTextAlignment="Center" Text="Zapisy gier"/>
+        <StackLayout BackgroundColor="DarkSlateBlue">
+            <Label HorizontalTextAlignment="Center" Text="Zapisy gier" FontSize="36" TextColor="White" FontAttributes="Bold" Margin="25"/>
             <ListView x:Name="listView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
-                                <Button x:Name="wczytajPrzycisk" Text="Wczytaj" CommandParameter="{Binding .}" Clicked="WczytajPrzycisk_Clicked"/>
+                                <Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="24" Margin="5"/>
+                                <Button x:Name="wczytajPrzycisk" Text="Wczytaj" CommandParameter="{Binding .}" Clicked="wczytajPrzycisk_Clicked" BackgroundColor="Black"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

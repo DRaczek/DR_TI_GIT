@@ -1,15 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DR_TI_GIT.GemPuzzleGame">
+             x:Class="DR_TI_GIT.GemPuzzleGame"
+             Shell.BackgroundColor="DarkSlateBlue"
+             >
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Zapisz" Order="Secondary" Clicked="ToolbarItem_Clicked">
             
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" BackgroundColor="DarkSlateBlue">
             <Label Text="Gra Puzzle" HorizontalOptions="Center" TextColor="Black" FontSize="36" FontAttributes="Bold" Margin="50"/>
+            <Label Text="*Aby wygrac gre musisz ulozyc numery po koleji od 1 do 15, aby zapisac gre kliknij 3 kropki u góry" TextColor="White" HorizontalOptions="Center" Margin="95" HorizontalTextAlignment="Center" />
 
             <Grid x:Name="grid"
                   HorizontalOptions="FillAndExpand"
