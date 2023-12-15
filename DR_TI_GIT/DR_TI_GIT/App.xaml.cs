@@ -7,6 +7,7 @@ namespace DR_TI_GIT
     public partial class App : Application
     {
 
+        public static string savesPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public App()
         {
             InitializeComponent();
