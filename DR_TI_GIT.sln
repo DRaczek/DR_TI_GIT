@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR_TI_GIT.Android", "DR_TI_GIT\DR_TI_GIT.Android\DR_TI_GIT.Android.csproj", "{826E8A83-686F-45F1-8436-84E2AED21BE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR_TI_GIT", "DR_TI_GIT\DR_TI_GIT\DR_TI_GIT.csproj", "{9FDC8185-61C1-44FD-94B3-044232189E98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826E8A83-686F-45F1-8436-84E2AED21BE6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDC8185-61C1-44FD-94B3-044232189E98}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7753768-84E7-4CE0-BD3B-377CB3FE0037}
+	EndGlobalSection
+EndGlobal
