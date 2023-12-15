@@ -15,7 +15,7 @@ namespace DR_TI_GIT
         public int GridCol { get; set; }
         public int GridRow { get; set; }
 
-        public Label label
+        public Label Label
         {
             get { return labelControl; }
             set { labelControl = value; }
@@ -28,7 +28,7 @@ namespace DR_TI_GIT
         }
         public bool IsInCorrectPosition(int boardSize)
         {
-            return Convert.ToInt32(label.Text) == GridCol + 1 + (GridRow * boardSize);
+            return Convert.ToInt32(Label.Text) == GridCol + 1 + (GridRow * boardSize);
         }
 
         public Element()

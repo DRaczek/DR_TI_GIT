@@ -36,8 +36,8 @@ namespace DR_TI_GIT
 
         TapGestureRecognizer gestureRecognizer = new TapGestureRecognizer();
         int size = 4;
-        int EmptyRow = 0, EmptyCol = 0;
-        private uint AnimationDurationMS = 200;
+        int emptyRow = 0, emptyCol = 0;
+        private uint animationDurationMS = 200;
         List<Element> elements = new List<Element>();
         public GemPuzzleGame()
         {
@@ -49,13 +49,13 @@ namespace DR_TI_GIT
         private void Intialize()
         {
             grid.Children?.Clear();
-            EmptyCol = EmptyRow = size - 1;
-            createGame();
+            emptyCol = emptyRow = size - 1;
+            CreateGame();
         }
 
-        private void createGame()
+        private void CreateGame()
         {
-            defineRowColDefinitons();
+            DefineRowColDefinitons();
 
             List<int> tilesNumbers = new List<int>();
             for (int j = 0; j < (size * size) - 1; j++) tilesNumbers.Add(j + 1);
@@ -84,28 +84,28 @@ namespace DR_TI_GIT
         {
             Element clicked = sender as Element;
             
-            if ((Math.Abs(clicked.GridCol - EmptyCol) == 1 && Math.Abs(clicked.GridRow - EmptyRow) == 0) ||
-                (Math.Abs(clicked.GridCol - EmptyCol) == 0 && Math.Abs(clicked.GridRow - EmptyRow) == 1))
+            if ((Math.Abs(clicked.GridCol - emptyCol) == 1 && Math.Abs(clicked.GridRow - emptyRow) == 0) ||
+                (Math.Abs(clicked.GridCol - emptyCol) == 0 && Math.Abs(clicked.GridRow - emptyRow) == 1))
             {
-                await clicked.FadeTo(0, AnimationDurationMS, Easing.SpringIn);
+                await clicked.FadeTo(0, animationDurationMS, Easing.SpringIn);
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-                    await Task.Delay((int)AnimationDurationMS);
-                    Grid.SetColumn(clicked, EmptyCol);
-                    Grid.SetRow(clicked, EmptyRow);
-                    int tmp = EmptyRow;
-                    EmptyRow = clicked.GridRow;
+                    await Task.Delay((int)animationDurationMS);
+                    Grid.SetColumn(clicked, emptyCol);
+                    Grid.SetRow(clicked, emptyRow);
+                    int tmp = emptyRow;
+                    emptyRow = clicked.GridRow;
                     clicked.GridRow = tmp;
-                    tmp = EmptyCol;
-                    EmptyCol = clicked.GridCol;
+                    tmp = emptyCol;
+                    emptyCol = clicked.GridCol;
                     clicked.GridCol = tmp;
-                    await clicked.FadeTo(1, AnimationDurationMS, Easing.SpringOut);
+                    await clicked.FadeTo(1, animationDurationMS, Easing.SpringOut);
                 });
                 IsDone();
             }
         }
 
-        private void defineRowColDefinitons()
+        private void DefineRowColDefinitons()
         {
             grid.RowDefinitions.Clear();
             grid.ColumnDefinitions.Clear();
@@ -135,8 +135,8 @@ namespace DR_TI_GIT
             {
                 var save = new GameSave()
                 {
-                    EmptyCol = EmptyCol,
-                    EmptyRow = EmptyRow,
+                    EmptyCol = emptyCol,
+                    EmptyRow = emptyRow,
                     Size = size,
                     Tiles = elements.Select(element =>
                     {
@@ -144,7 +144,7 @@ namespace DR_TI_GIT
                         {
                             GridCol = element.GridCol,
                             GridRow = element.GridRow,
-                            Number = Convert.ToInt32(element.label.Text)
+                            Number = Convert.ToInt32(element.Label.Text)
                         };
                         return tile;
                     }).ToList()
@@ -154,7 +154,7 @@ namespace DR_TI_GIT
                 File.WriteAllText(path, JsonConvert.SerializeObject(save));
                 await DisplayAlert("Sukces", "Poprawnie zapisano do pliku", "Ok");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await DisplayAlert("Błąd", "Podczas zapisywania wystąpił błąd", "Ok");
             }
@@ -164,8 +164,8 @@ namespace DR_TI_GIT
         {
             GameSave save = JsonConvert.DeserializeObject<GameSave>(File.ReadAllText(fileName));
             grid.Children.Clear();
-            EmptyCol = save.EmptyCol;
-            EmptyRow = save.EmptyRow;
+            emptyCol = save.EmptyCol;
+            emptyRow = save.EmptyRow;
             size = save.Size;
             elements = save.Tiles.Select(tile =>
             {
@@ -173,9 +173,6 @@ namespace DR_TI_GIT
                 grid.Children.Add(element);
                 return element;
             }).ToList();
-
         }
-
-
     }
 }

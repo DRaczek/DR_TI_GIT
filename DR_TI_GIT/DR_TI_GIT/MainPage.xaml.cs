@@ -32,7 +32,7 @@ namespace DR_TI_GIT
             listView.ItemsSource = Files;
         }
 
-        private void wczytajPrzycisk_Clicked(object sender, EventArgs e)
+        private void WczytajPrzycisk_Clicked(object sender, EventArgs e)
         {
             FileInfo fileInfo = (sender as Button).CommandParameter as FileInfo;
             AppShell.Current.GoToAsync("//GemPuzzleGame?fileinfo=" + fileInfo.FullName);
