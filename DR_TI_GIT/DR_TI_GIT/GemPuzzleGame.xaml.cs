@@ -13,6 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace DR_TI_GIT
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [QueryProperty(nameof(FileInfo), "fileinfo")]
     public partial class GemPuzzleGame : ContentPage
     {
         private string fileInfo;
