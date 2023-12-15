@@ -1,6 +1,4 @@
-﻿using DR_TI_GIT.Services;
-using DR_TI_GIT.Views;
-using System;
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +11,6 @@ namespace DR_TI_GIT
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
