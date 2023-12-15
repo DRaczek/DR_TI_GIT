@@ -16,5 +16,11 @@ namespace DR_TI_GIT
         {
             InitializeComponent();
         }
+
+        private void wczytajPrzycisk_Clicked(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

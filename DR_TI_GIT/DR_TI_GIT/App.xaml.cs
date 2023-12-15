@@ -12,7 +12,7 @@ namespace DR_TI_GIT
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new  AppShell();
         }
 
         protected override void OnStart()
