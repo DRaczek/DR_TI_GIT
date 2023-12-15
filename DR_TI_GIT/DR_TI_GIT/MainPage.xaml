@@ -2,11 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DR_TI_GIT.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+ <ContentPage.Content>
+        <StackLayou>
+            <Label HorizontalTextAlignment="Center" Text="Zapisy gier"/>
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
+                                <Button x:Name="wczytajPrzycisk" Text="Wczytaj" CommandParameter="{Binding .}" Clicked="wczytajPrzycisk_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayou>
     </ContentPage.Content>
 </ContentPage>
