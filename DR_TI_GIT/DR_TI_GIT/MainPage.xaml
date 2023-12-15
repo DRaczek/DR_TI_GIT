@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DR_TI_GIT.MainPage">
  <ContentPage.Content>
-        <StackLayou>
+        <StackLayout>
             <Label HorizontalTextAlignment="Center" Text="Zapisy gier"/>
             <ListView x:Name="listView">
                 <ListView.ItemTemplate>
@@ -17,6 +17,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayou>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

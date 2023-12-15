@@ -9,6 +9,6 @@ namespace DR_TI_GIT
         public int EmptyRow { get; set; }
         public int EmptyCol { get; set; }
         public int Size { get; set; }
-        public List<Tile> tiles{ get; set; }
+        public List<Tile> Tiles{ get; set; }
     }
 }
