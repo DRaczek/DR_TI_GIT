@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace DR_TI_GIT
                 fileInfo = value;
                 // split na / a pozniej na . zeby pobrac nazwe pliku bez rozszerzenia
                 if (fileInfo != null) fileInfoName = (new List<string>(fileInfo.Split('/')).Last()).Split('.').First();
+                if (value != null) LoadFromFile(value);
             }
         }
 
@@ -126,8 +128,53 @@ namespace DR_TI_GIT
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
+            string Title = await DisplayPromptAsync("Tytuł", "Podaj nazwe pliku", initialValue: fileInfoName ?? "");
+            if (string.IsNullOrEmpty(Title)) return;
+            try
+            {
+                var save = new GameSave()
+                {
+                    EmptyCol = EmptyCol,
+                    EmptyRow = EmptyRow,
+                    Size = size,
+                    Tiles = elements.Select(element =>
+                    {
+                        var tile = new Tile()
+                        {
+                            GridCol = element.GridCol,
+                            GridRow = element.GridRow,
+                            Number = Convert.ToInt32(element.label.Text)
+                        };
+                        return tile;
+                    }).ToList()
+                };
+                string path = Path.Combine(App.savesPath, Title + ".txt");
+                File.Create(path).Close();
+                File.WriteAllText(path, JsonConvert.SerializeObject(save));
+                await DisplayAlert("Sukces", "Poprawnie zapisano do pliku", "Ok");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Błąd", "Podczas zapisywania wystąpił błąd", "Ok");
+            }
         }
 
-       
+        private void LoadFromFile(string fileName)
+        {
+            GameSave save = JsonConvert.DeserializeObject<GameSave>(File.ReadAllText(fileName));
+            grid.Children.Clear();
+            EmptyCol = save.EmptyCol;
+            EmptyRow = save.EmptyRow;
+            size = save.Size;
+            elements = save.Tiles.Select(tile =>
+            {
+                Element element = Element.create(ref elements, gestureRecognizer, tile.GridCol, tile.GridRow, tile.Number.ToString());
+                grid.Children.Add(element);
+                return element;
+            }).ToList();
+
+        }
+
+
     }
 }
