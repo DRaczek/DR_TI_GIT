@@ -12,7 +12,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Name}" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="24" Margin="5"/>
-                                <Button x:Name="wczytajPrzycisk" Text="Wczytaj" CommandParameter="{Binding .}" Clicked="wczytajPrzycisk_Clicked" BackgroundColor="Black"/>
+                                <Button x:Name="wczytajPrzycisk" Text="Wczytaj" CommandParameter="{Binding .}" Clicked="WczytajPrzycisk_Clicked" BackgroundColor="Black"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
